@@ -16,18 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-IR-VbD">
-                                <rect key="frame" x="142" y="457" width="50" height="88"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-IR-VbD">
+                                <rect key="frame" x="0.0" y="500" width="600" height="100"/>
                                 <color key="backgroundColor" red="0.98823535442352295" green="0.090196080505847931" blue="0.52549022436141968" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DG4-RX-hxX"/>
+                                    <constraint firstAttribute="width" constant="600" id="q6K-j9-AAx"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="c9e-2B-YWj" appends="YES" id="2Fb-Wf-v0z"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oi6-IR-VbD" secondAttribute="bottom" id="220-1K-2dE"/>
+                            <constraint firstItem="oi6-IR-VbD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bcr-XD-uMh"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bawah" destination="oi6-IR-VbD" id="MW6-PS-5X5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="c9e-2B-YWj"/>
             </objects>
             <point key="canvasLocation" x="249" y="280"/>
         </scene>
