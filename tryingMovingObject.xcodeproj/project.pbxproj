@@ -14,6 +14,7 @@
 		89D8C3181B6AA82000790F52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D8C3171B6AA82000790F52 /* Images.xcassets */; };
 		89D8C31B1B6AA82000790F52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D8C3191B6AA82000790F52 /* LaunchScreen.xib */; };
 		89D8C3271B6AA82000790F52 /* tryingMovingObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8C3261B6AA82000790F52 /* tryingMovingObjectTests.swift */; };
+		89D8C3311B6AA99B00790F52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D8C3301B6AA99B00790F52 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		89D8C3201B6AA82000790F52 /* tryingMovingObjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tryingMovingObjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D8C3251B6AA82000790F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D8C3261B6AA82000790F52 /* tryingMovingObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tryingMovingObjectTests.swift; sourceTree = "<group>"; };
+		89D8C3301B6AA99B00790F52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D8C3311B6AA99B00790F52 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		89D8C2FF1B6AA81F00790F52 = {
 			isa = PBXGroup;
 			children = (
+				89D8C3301B6AA99B00790F52 /* MapKit.framework */,
 				89D8C30A1B6AA81F00790F52 /* tryingMovingObject */,
 				89D8C3231B6AA82000790F52 /* tryingMovingObjectTests */,
 				89D8C3091B6AA81F00790F52 /* Products */,
