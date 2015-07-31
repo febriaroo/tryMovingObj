@@ -14,25 +14,25 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var bawah: UIView!
-    
-    // When user starting to touch the phone
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
-            location = touch.locationInView(self.view)
-            bawah.center = location
-        }
-        super.touchesBegan(touches , withEvent:event)
-        
-    }
-     //When user starting to move when they are still touching the screen
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
-             location = touch.locationInView(self.view)
-            bawah.center = location
-        }
-        super.touchesBegan(touches , withEvent:event)
-        
-    }
+//    
+//    // When user starting to touch the phone
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        if let touch = touches.first as? UITouch {
+//            location = touch.locationInView(self.view)
+//            bawah.center = location
+//        }
+//        super.touchesBegan(touches , withEvent:event)
+//        
+//    }
+//     //When user starting to move when they are still touching the screen
+//    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        if let touch = touches.first as? UITouch {
+//             location = touch.locationInView(self.view)
+//            bawah.center = location
+//        }
+//        super.touchesBegan(touches , withEvent:event)
+//        
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,8 +57,15 @@ class ViewController: UIViewController {
                 var basketTopFrame = self.bawah.frame
                 basketTopFrame.origin.y -= basketTopFrame.size.height
                 
-               // var basketBottomFrame = self.basketBottom.frame
-                //basketBottomFrame.origin.y += basketBottomFrame.size.height
+//                if basketTopFrame.origin.y > self.view.frame.origin.y {
+//                 basketTopFrame.origin.y += basketTopFrame.size.height
+//                }
+                
+                // Fade in
+                // to create the fade in animation, change the alpha from 0 to 1
+                UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.bawah.alpha = 1.0
+                    }, completion: nil)
                 
                 self.bawah.frame = basketTopFrame
                 //self.basketBottom.frame = basketBottomFrame
