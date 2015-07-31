@@ -12,9 +12,10 @@ class ViewController: UIViewController {
 
     var location = CGPoint(x: 0, y: 0)
     
+    @IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var bawah: UIView!
-//    
+//
 //    // When user starting to touch the phone
 //    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 //        if let touch = touches.first as? UITouch {
@@ -43,6 +44,17 @@ class ViewController: UIViewController {
         downSwipe.direction = .Down
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(downSwipe)
+        
+        //create shape
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.blackColor().CGColor
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
+        let heightku = bawah.frame.origin.y
+        image.frame = CGRectMake(bawah.frame.width/2, heightku, 128, 128)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,16 +69,26 @@ class ViewController: UIViewController {
                 var basketTopFrame = self.bawah.frame
                 basketTopFrame.origin.y -= basketTopFrame.size.height
                 
-//                if basketTopFrame.origin.y > self.view.frame.origin.y {
-//                 basketTopFrame.origin.y += basketTopFrame.size.height
-//                }
+                if basketTopFrame.origin.y > self.view.frame.origin.y {
+                 basketTopFrame.origin.y += basketTopFrame.size.height
+                }
                 
-                // Fade in
-                // to create the fade in animation, change the alpha from 0 to 1
-                UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    self.bawah.alpha = 1.0
-                    }, completion: nil)
                 
+                if self.bawah.alpha == 1.0 {
+                    // Fade out
+                    // to create the fade in animation, change the alpha from 1.0 to 0
+                    UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        self.bawah.alpha = 0.0
+                        }, completion: nil)
+                }
+                else
+                {
+                    // Fade in
+                    // to create the fade in animation, change the alpha from 0 to 1
+                    UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        self.bawah.alpha = 1.0
+                        }, completion: nil)
+                }
                 self.bawah.frame = basketTopFrame
                 //self.basketBottom.frame = basketBottomFrame
                 }, completion: { finished in

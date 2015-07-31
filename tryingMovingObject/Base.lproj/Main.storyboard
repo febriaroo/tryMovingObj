@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,27 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-IR-VbD">
+                            <view alpha="0.15000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-IR-VbD">
                                 <rect key="frame" x="0.0" y="500" width="600" height="100"/>
                                 <color key="backgroundColor" red="0.98823535442352295" green="0.090196080505847931" blue="0.52549022436141968" alpha="1" colorSpace="deviceRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DG4-RX-hxX"/>
-                                    <constraint firstAttribute="width" constant="600" id="q6K-j9-AAx"/>
+                                    <constraint firstAttribute="height" constant="100" id="EJf-5i-u50"/>
+                                    <constraint firstAttribute="width" constant="600" id="Pdb-UH-GQw"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="c9e-2B-YWj" appends="YES" id="2Fb-Wf-v0z"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="o" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-vX-xjL">
+                                <rect key="frame" x="236" y="426" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="AKA-sB-jsI"/>
+                                    <constraint firstAttribute="height" constant="128" id="AOa-ub-86Y"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oi6-IR-VbD" secondAttribute="bottom" id="220-1K-2dE"/>
-                            <constraint firstItem="oi6-IR-VbD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bcr-XD-uMh"/>
+                            <constraint firstItem="oi6-IR-VbD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="PUn-v8-P5u"/>
+                            <constraint firstItem="oi6-IR-VbD" firstAttribute="bottom" secondItem="LS6-vX-xjL" secondAttribute="bottom" constant="46" id="UKv-sJ-p0X"/>
+                            <constraint firstItem="oi6-IR-VbD" firstAttribute="centerX" secondItem="LS6-vX-xjL" secondAttribute="centerX" priority="999" id="gyl-V8-Ub2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oi6-IR-VbD" secondAttribute="trailing" constant="-16" id="h7j-wf-8NO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oi6-IR-VbD" secondAttribute="bottom" id="ke6-8J-gyt"/>
+                            <constraint firstItem="LS6-vX-xjL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="997" constant="406" id="nhu-YR-i7a"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bawah" destination="oi6-IR-VbD" id="MW6-PS-5X5"/>
+                        <outlet property="image" destination="LS6-vX-xjL" id="TRk-17-UzU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,4 +58,7 @@
             <point key="canvasLocation" x="249" y="280"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="o" width="500" height="375"/>
+    </resources>
 </document>
